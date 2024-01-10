@@ -1,8 +1,6 @@
-// Declaración del paquete al que pertenece la clase
 package com.example.Prueba.api;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Value;
-// Importaciones de clases necesarias
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,7 +12,6 @@ public class ApiMoneda {
     // URL de la API a la que se realizarán las solicitudes
     private final String apiUrl = "https://165.227.94.139/api";
 
-    // Instancia de RestTemplate, que se utilizará para realizar solicitudes
     private final RestTemplate restTemplate;
 
     // Constructor de la clase que recibe una instancia de RestTemplate mediante inyección de dependencias
@@ -27,7 +24,6 @@ public class ApiMoneda {
         // Realiza una solicitud GET a la API y obtiene la respuesta como una cadena
         String resultado = restTemplate.getForObject(apiUrl, String.class);
 
-        // Retorna el resultado obtenido
         return resultado;
     }
     public Double obtenerTasaCambioEnFecha(String fecha) {

@@ -6,10 +6,8 @@ import org.springframework.web.client.RestTemplate;
 public class CalculadoraMoneda {
 
     public static void main(String[] args) {
-        // Crea un escaner para leer la entrada desde la terminal
         Scanner scanner = new Scanner(System.in);
 
-        // Pide al usuario que ingrese el año y el mes
         System.out.print("Ingrese el año (formato yyyy): ");
         String year = scanner.nextLine();
 
@@ -25,11 +23,9 @@ public class CalculadoraMoneda {
         Double variacionPorcentual = apiMoneda.calcularVariacionPorcentual(fechaInicio, fechaFin);
         Double diferenciaEnPesos = apiMoneda.calcularDiferenciaEnPesos(fechaInicio, fechaFin, 1.0); // Asumiendo un monto de 1
 
-        // Muestra los resultados
         System.out.println("Variación Porcentual: " + variacionPorcentual + "%");
         System.out.println("Diferencia en Pesos: " + diferenciaEnPesos);
 
-        // Cierra el escáner
         scanner.close();
     }
 }
